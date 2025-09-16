@@ -8,7 +8,7 @@
 /* 2. ESTILOS GERAIS */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #6a89cc;
+    background-color: #060624;
 
     display: flex;
     justify-content: center;
@@ -52,7 +52,7 @@ body {
     margin-bottom: 8px;
 }
 
-.form-group input {
+.form-group input[type="text"] {
     width: 100%;
     padding: 12px 15px; /* Espaçamento interno generoso*/
     font-size: 1rem;
@@ -61,20 +61,48 @@ body {
     border-radius: 4px;
 
     /* Propriedade chave para animações suaves */
-    transition: border-color 0.3s box-shadow 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* A pseudo-classe ":focus" é ativada quando o usuário clica ou navega para um campo de input. É CRUCIAL para a usabilidade, pois mostra claramente ao usuário onde ele está digitando. */
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
 
-.form-group input:focus {
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
     outline: none; /* Remove a borda de foco padrão do navegador, que costuma ser feia */
     border-color: #6a89cc; /* Muda a cor da borda para a nossa cor primária */
 
-     /* Adiciona uma "aura" sutil ao redor do campo para um destaque ainda maior */
-     box-shadow: 0 0 0 3px rgba(106, 137, 204, 0.3);
+    /* Adiciona uma "aura" sutil ao redor do campo para um destaque ainda maior */
+    box-shadow: 0 0 0 3px rgba(106, 137, 204, 0.3);
 }
 
-/* 5. ESTILOS DO BOTÃO DE ENVIO */
+/* 5. ESTILOS DO CHECKBOX ALINHADO */
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* 6. ESTILOS DO BOTÃO DE ENVIO */
 .submit-button {
     width: 100%;
     padding: 15px;
